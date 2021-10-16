@@ -18,7 +18,7 @@ public class Contador01 {
         // TODO code application logic here
         int cc =0;
         while (cc<4){
-            System.out.println("Cambalhota");
+            System.out.println("Cambalhota " +cc);//posso colocar + (cc+1) se quiser que o comece no 1 ao inves de 0
             cc++;          
         }
     }
