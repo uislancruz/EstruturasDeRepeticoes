@@ -17,9 +17,16 @@ public class Contador01 {
     public static void main(String[] args) {
         // TODO code application logic here
         int cc =0;
-        while (cc<4){
+        while (cc<10){
+            cc++; 
+            if (cc == 2 || cc == 3 || cc == 4){
+                continue;
+            } 
+            if (cc == 7){
+                break;
+            }
             System.out.println("Cambalhota " +cc);//posso colocar + (cc+1) se quiser que o comece no 1 ao inves de 0
-            cc++;          
+                     
         }
     }
     
