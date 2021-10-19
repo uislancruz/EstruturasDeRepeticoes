@@ -16,18 +16,18 @@ public class Contador01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int cc =0;
-        while (cc<10){
-            cc++; 
-            if (cc == 2 || cc == 3 || cc == 4){
-                continue;
-            } 
-            if (cc == 7){
-                break;
-            }
-            System.out.println("Cambalhota " +cc);//posso colocar + (cc+1) se quiser que o comece no 1 ao inves de 0
-                     
-        }
-    }
+       int numero = 6;
+      
+      System.out.println( "Ejemplo del Cálculo del factorial de un número en Java" );
+      System.out.println( "El factorial de " + numero + " es: " + factorial( numero ) );      
+   }
+ 
+   public static int factorial( int numero ) {
+      int fact = 1;
+      for( int i = 1; i <= numero; i++ ) {
+         fact *= i;
+      
+        }return fact;
+   } 
     
 }
