@@ -5,6 +5,8 @@
  */
 package exerciciorepita;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author uisla
@@ -16,6 +18,17 @@ public class ExercicioRepita {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
+        //JOptionPane.showMessageDialog(null, "Ola mundo!","Boas Vindas", JOptionPane.INFORMATION_MESSAGE);
+      
+        int n;
+        do{
+            
+        n = Integer.parseInt(JOptionPane.showInputDialog(null, 
+                "<html>Informe um numero: <br><em>(o valor 0 interrompe a sequencia)</em></br></html>"));
+       
+        } while (n !=0);
+        JOptionPane.showMessageDialog(null, "O numero que você digitou foi: " +n);
+        }
+        
     
 }
