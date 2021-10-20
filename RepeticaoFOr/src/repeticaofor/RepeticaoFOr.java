@@ -16,8 +16,12 @@ public class RepeticaoFOr {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        for (int cc=0; cc<=3; cc++){
-            System.out.println("Cambalhota");
+        for (int cc=1; cc<=3; cc+=1){
+            for (int i=0; i<=2; i++){
+                System.out.println("Teste: "+i);
+            }
+            System.out.println(cc);
+            
         }
     }
     
