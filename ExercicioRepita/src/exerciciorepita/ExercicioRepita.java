@@ -27,7 +27,7 @@ public class ExercicioRepita {
         n = Integer.parseInt(JOptionPane.showInputDialog(null, 
                 "<html>Informe um numero: <br><em>(o valor 0 interrompe a sequencia)</em></br></html>"));
                 //JOptionPane.showMessageDialog(null, "O numero que você digitou foi: " +n);
-                s +=n;
+                //s +=n;
         } while (n !=0);
                 JOptionPane.showMessageDialog(null,"A soma total dos numeros digitados é: " +s );
                 
