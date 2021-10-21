@@ -5,6 +5,8 @@
  */
 package classes;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author uisla
@@ -68,6 +70,11 @@ public class TelaContador extends javax.swing.JFrame {
         sliPasso.setMaximum(4);
         sliPasso.setMinimum(1);
         sliPasso.setValue(1);
+        sliPasso.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sliPassoStateChanged(evt);
+            }
+        });
 
         lblInicio.setText("0");
 
@@ -76,12 +83,12 @@ public class TelaContador extends javax.swing.JFrame {
         lblPasso.setText("1");
 
         btnCont.setText("Contar");
-
-        lstCont.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        btnCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContActionPerformed(evt);
+            }
         });
+
         jScrollPane1.setViewportView(lstCont);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,7 +156,7 @@ public class TelaContador extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(btnCont, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,6 +173,27 @@ public class TelaContador extends javax.swing.JFrame {
         int f = sliFim.getValue();
         lblFim.setText(Integer.toString(f));
     }//GEN-LAST:event_sliFimStateChanged
+
+    private void sliPassoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliPassoStateChanged
+        // TODO add your handling code here:
+        int p = sliPasso.getValue();
+        lblPasso.setText(Integer.toString(p));
+    }//GEN-LAST:event_sliPassoStateChanged
+
+    private void btnContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContActionPerformed
+        // TODO add your handling code here:
+        int i = lsiInicio.getValue();
+        int f = sliFim.getValue();
+        int p = sliPasso.getValue();
+        DefaultListModel lista = new DefaultListModel();
+        
+        for (int c = 1; c<=f; c +=p){
+            lista.addElement(c);
+            
+        }
+        lstCont.setModel(lista);
+        
+    }//GEN-LAST:event_btnContActionPerformed
 
     /**
      * @param args the command line arguments
