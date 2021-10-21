@@ -43,6 +43,7 @@ public class TelaContador extends javax.swing.JFrame {
         lstCont = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Inicio");
 
@@ -187,7 +188,7 @@ public class TelaContador extends javax.swing.JFrame {
         int p = sliPasso.getValue();
         DefaultListModel lista = new DefaultListModel();
         
-        for (int c = 1; c<=f; c +=p){
+        for (int c = i; c<=f; c +=p){
             lista.addElement(c);
             
         }
