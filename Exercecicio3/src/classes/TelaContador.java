@@ -192,6 +192,7 @@ public class TelaContador extends javax.swing.JFrame {
             lista.addElement(c);
             
         }
+        
         lstCont.setModel(lista);
         
     }//GEN-LAST:event_btnContActionPerformed
