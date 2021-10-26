@@ -5,12 +5,19 @@
  */
 package classes;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author uisla
  */
 public class TelaVetor extends javax.swing.JFrame {
 
+    int vetor [] = new int [5];
+    DefaultListModel lista = new DefaultListModel();
+    int selecionado = 0;
+    
+    
     /**
      * Creates new form TelaVetor
      */
@@ -40,6 +47,11 @@ public class TelaVetor extends javax.swing.JFrame {
 
         btnAdd.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnAdd.setText("Adicionar");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnRemover.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         btnRemover.setText("Remover");
@@ -51,6 +63,7 @@ public class TelaVetor extends javax.swing.JFrame {
 
         lblSelecionado.setText("[0]");
 
+        lstVetor.setModel(lista);
         jScrollPane1.setViewportView(lstVetor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,6 +111,15 @@ public class TelaVetor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        vetor [selecionado] = Integer.parseInt(txtNum.getValue().toString());
+        lista.removeAllElements();
+        for (int c = 0; c < vetor.length;c++){
+            lista.addElement(vetor[c]);
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
