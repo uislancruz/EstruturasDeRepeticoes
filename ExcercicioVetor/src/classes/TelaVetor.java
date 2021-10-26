@@ -64,6 +64,11 @@ public class TelaVetor extends javax.swing.JFrame {
         lblSelecionado.setText("[0]");
 
         lstVetor.setModel(lista);
+        lstVetor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstVetorMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstVetor);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,6 +125,12 @@ public class TelaVetor extends javax.swing.JFrame {
             lista.addElement(vetor[c]);
         }
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void lstVetorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstVetorMouseClicked
+        // TODO add your handling code here:
+        selecionado = lstVetor.getSelectedIndex();
+        lblSelecionado.setText("[" + selecionado + "]");
+    }//GEN-LAST:event_lstVetorMouseClicked
 
     /**
      * @param args the command line arguments
