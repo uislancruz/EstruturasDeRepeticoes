@@ -23,6 +23,9 @@ public class TelaVetor extends javax.swing.JFrame {
      */
     public TelaVetor() {
         initComponents();
+        for (int c = 0; c < vetor.length;c++){
+            lista.addElement(vetor[c]);
+        }
     }
 
     /**
